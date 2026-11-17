@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h2>Grafik Penjualan Bulanan</h2>
+  <canvas id="grafikPenjualan" widht="300"></canvas>
+
+  <script src="chart.js">
+    fetch('penjualan.json ')
+     .then(response => response.json())
+     .then(data => {
+      const labels =  data.map(item => item.bulan);
+      const penjualanData = data.map (item => item.penjualan);
+
+      console.log(labels);
+      console.log(penjualanData);
+
+      const ctx = document.getElementById('grafikPenjualan').getContext('2d');
+      const chart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: labels,
+          datasets: [{
+            label: 'Penjualan',
+            data: penjualanData,
+            backgroundColor: 'rgba(255, 99, 132, 0.2)',
+            borderColor: 'rgba(255, 99, 132, 1)',
+            borderWidth: 1
+          }]
+        },
+        options: {
+          responsive: true,
+          scales: {
+            y: {
+              beginAtZero: true
+            }
+          }
+        }
+      });
+    })
+    .catch
+  </script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+  [
+    { "bulan": "Jan", "penjualan": 13 },
+    { "bulan": "Feb", "penjualan": 18 },
+    { "bulan": "Mar", "penjualan": 25 },
+    { "bulan": "Apr", "penjualan": 20 },
+    { "bulan": "Mei", "penjualan": 30 }
+]

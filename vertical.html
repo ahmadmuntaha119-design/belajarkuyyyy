@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="contariner">
+    <input type="range" class="slider" min="0" max="100" value="50" oninput="handleCompareGray(this)"/>
+
+    <div id="gray">
+      <img src="/image.webp" height="500" width="700" alt="gambar">
+    </div>
+
+    <img src="/image.webp" height="500" width="700" alt="gambar">
+  </div>
+
+  <script>
+    const gray = document.getElementById('gray');
+    
+    function handleCompareGray(el) {
+      const maxHeight = 500;
+      const height = maxHeight * (el.value / 100);
+      gray.style.height = `${height}px`;
+    }
+  </script>
+</body>
+</html>
